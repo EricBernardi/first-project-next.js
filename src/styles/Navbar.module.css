@@ -7,5 +7,10 @@
 
 .navbar_menus {
     text-decoration: none;
+    padding: 10px;
     color: white;
+}
+
+.navbar_menus:hover {
+    color: rgb(48, 125, 197);
 }
