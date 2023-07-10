@@ -1,0 +1,11 @@
+.navbar {
+    height: 70px;
+    justify-content: center;
+    color: white;
+    background-color: rgba(27, 27, 27, 0.938);
+}
+
+.navbar_menus {
+    text-decoration: none;
+    color: white;
+}

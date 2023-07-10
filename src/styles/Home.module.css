@@ -1,0 +1,16 @@
+.title_inicial {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    margin: 13px 0px;
+    color: #fff;
+    background-image: url('/images/image1000x300.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 1400px;
+}
+
+.coitaner_home{
+    display: flex;
+    justify-content: center;
+}

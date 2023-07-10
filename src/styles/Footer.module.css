@@ -1,0 +1,12 @@
+.footer_fixed {
+    display: flex;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(27, 27, 27, 0.938);
+    color: white;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+}

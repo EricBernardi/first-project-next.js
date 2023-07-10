@@ -1,0 +1,27 @@
+.container {
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.container_detalhes {
+    padding: 18px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    background-color: rgba(75, 75, 75, 0.918);
+    color: white;
+    font-size: 20px;
+}
+
+.detalhes {
+    height: 90%;
+}
+
+.btn_voltar{
+    display: flex;
+    justify-content: flex-end;
+}
