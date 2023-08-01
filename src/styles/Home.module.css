@@ -1,6 +1,9 @@
 .container {
     background-image: url('/images/imagenoite.jpeg');
     height: 905px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .title_inicial {
@@ -16,4 +19,29 @@
 .coitaner_home{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.container_login{
+    display: flex;
+    background-color: rgba(130, 140, 184, 0.308);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input_login {
+    margin: 10px;
+    background-color: rgba(130, 140, 184, 0.788);
+    border-radius: 5px;
+}
+
+.button {
+    background-color: rgba(130, 140, 184, 0.788);
+}
+
+.button:hover {
+    background-color: rgba(130, 140, 184, 0.982);
+    color: black;
 }

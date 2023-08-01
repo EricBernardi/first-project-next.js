@@ -6,6 +6,7 @@ import Head from "next/head";
 import { GetCursos, SaveCurso } from "@/pages/cursos.service";
 import Link from "next/link";
 import Style from "@/styles/Curso.module.css";
+import { Btn } from "../Btn";
 
 export default function Cursos() {
   const inputRef: any = useRef(null);
@@ -38,6 +39,10 @@ export default function Cursos() {
     fetchData();
   }, []);
 
+  function evento(){
+    alert('Primeiro evento do projeto')
+  }
+
   return (
     <>
       <Head>
@@ -67,6 +72,7 @@ export default function Cursos() {
           </div>
         </div>
       </div>
+      <Btn event={evento} text='Primeiro botão' >Teste</Btn>
     </>
   );
 }
