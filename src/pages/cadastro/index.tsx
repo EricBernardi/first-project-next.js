@@ -1,9 +1,22 @@
 import { Button, Grid } from "@mui/material";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
+import Login from "../login";
+import { useState, useEffect } from 'react';
 
 export default function Cadastro() {
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+    const storageToken = localStorage.getItem('token');
+    if (storageToken) {
+      setToken(storageToken);
+    }
+  }, [token]);
+
+  if(!token) {
+    return <Login setToken={setToken}/>
+  }
   return (
     <>
       <Head>
