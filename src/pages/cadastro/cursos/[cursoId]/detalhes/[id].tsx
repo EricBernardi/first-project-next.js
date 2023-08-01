@@ -2,25 +2,25 @@ import { Button } from "@mui/material";
 import Style from "@/styles/Detalhes.module.css";
 const URL = "http://localhost:3000/cursos";
 
-export async function getStaticPaths() {
-  const res = await fetch(URL);
-  const cursos = await res.json();
+// export async function getStaticPaths() {
+//   const res = await fetch(URL);
+//   const cursos = await res.json();
 
-  const paths = cursos.map((curso: any) => ({
-    params: { id: curso.id.toString(), cursoId: curso.id.toString() },
-  }));
+//   const paths = cursos.map((curso: any) => ({
+//     params: { id: curso.id.toString(), cursoId: curso.id.toString() },
+//   }));
 
-  return { paths, fallback: false };
-}
+//   return { paths, fallback: false };
+// }
 
-export async function getStaticProps({ params }: any) {
-  const response = await fetch(`${URL}/${params.id.toString()}`);
+// export async function getStaticProps({ params }: any) {
+//   const response = await fetch(`${URL}/${params.id.toString()}`);
 
-  const curso = await response.json();
-  return {
-    props: { curso },
-  };
-}
+//   const curso = await response.json();
+//   return {
+//     props: { curso },
+//   };
+// }
 
 export default function Detalhe({ curso }: any) {
   return (
