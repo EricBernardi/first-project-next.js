@@ -7,10 +7,12 @@ import { GetCursos, SaveCurso } from "@/pages/cursos.service";
 import Link from "next/link";
 import Style from "@/styles/Curso.module.css";
 import { Btn } from "../Btn";
+import Login from "@/pages/login";
 
 export default function Cursos() {
   const inputRef: any = useRef(null);
   const [cursos, setCursos] = useState([]);
+  const [token, setToken] = useState('');
 
   async function adicionar() {
     const novoCurso = inputRef.current ? inputRef.current.value : "";
@@ -41,6 +43,17 @@ export default function Cursos() {
 
   function evento(){
     alert('Primeiro evento do projeto')
+  }
+
+  useEffect(() => {
+    const storageToken = localStorage.getItem('token');
+    if (storageToken) {
+      setToken(storageToken);
+    }
+  }, [token]);
+
+  if(!token) {
+    return <Login setToken={setToken}/>
   }
 
   return (

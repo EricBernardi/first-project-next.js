@@ -1,5 +1,4 @@
 import { Button, Grid, TextField } from "@mui/material";
-import Link from "next/link";
 import Style from "@/styles/Home.module.css";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
@@ -10,7 +9,6 @@ const apiUrl = "http://localhost:3000";
 async function loginTeste(credentials: any){
   try {
     const response = await axios.post(`${apiUrl}/login`, { credentials });
-    console.log(response);
     const token = response.data.data.token;
 
     localStorage.setItem('token', token);
@@ -20,20 +18,6 @@ async function loginTeste(credentials: any){
     console.log('Erro de login:', error);
   }
 }
-
-// async function loginUser(credentials: any) {
-//     return fetch(`${apiUrl}/login`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(credentials),
-//     }).then((data) => {
-//       if (data.ok) data.json();
-//     }).catch(error => {
-//       console.log(error)
-//     });
-// }
 
 export default function Login({ setToken }: any) {
   const [username, SetUsername] = useState();
@@ -63,6 +47,7 @@ export default function Login({ setToken }: any) {
       <Grid container className={Style.container}>
         <Grid xs={12} className={Style.coitaner_home}></Grid>
         <Grid xs={6} direction="column" className={Style.container_login}>
+          <h1 style={{color: 'white', backgroundColor: '#00000091', borderRadius: '5px', padding: '5px'}}>Faça login para continuar</h1>
           {login.map((value: any) => (
             <>
               <Grid xs={12}>

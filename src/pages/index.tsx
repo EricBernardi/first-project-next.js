@@ -1,16 +1,17 @@
 import { Grid } from "@mui/material";
 import Style from "@/styles/Home.module.css";
-import React, { SetStateAction, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import Login from "./login";
 
 export default function Home() {
   const [token, setToken] = useState('');
-  
-  const StorageToken = localStorage.getItem('token');
 
-  console.log(StorageToken)
-
-  setToken(StorageToken ? StorageToken : '');
+  useEffect(() => {
+    const storageToken = localStorage.getItem('token');
+    if (storageToken) {
+      setToken(storageToken);
+    }
+  }, [token]);
 
   if(!token) {
     return <Login setToken={setToken}/>
