@@ -13,7 +13,6 @@ export async function GetCursos() {
 
 export async function SaveCurso(value: any){
   try {
-    console.log(JSON.stringify({data: value}))
     const response = await fetch(URL, {
       method: 'POST',
       headers: {
@@ -21,14 +20,17 @@ export async function SaveCurso(value: any){
       },
       body: JSON.stringify({data: value}),
     })
-    if(response.ok) {
-      const data = await response.json();
-      return true;
-    } else {
-      console.error('Erro na requisição:', response.status, response.statusText);
+
+    console.log(response)
+
+    if(!response.ok) {
+      throw new Error('Failed to fetch data of courses')
     }
-  } catch (error) {
-    console.log(error);
+
+    return response;
+
+  } catch (err) {
+    console.log(err);
     return null;
   }
 }
