@@ -14,10 +14,10 @@ import MenuDrawer from "./menu-drawer";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { redirect } from "next/dist/server/api-utils";
 
 export default function Navbar() {
   const [menuIsClicked, setMenuIsClicked] = useState(false);
+  
   function getMenuIsClicked() {
     setMenuIsClicked(!menuIsClicked);
     console.log(menuIsClicked);
@@ -31,7 +31,7 @@ export default function Navbar() {
     { index: 1, menu: "Home", route: "/" },
     { index: 2, menu: "Cadastro", route: "/cadastro" },
     { index: 3, menu: "Cursos", route: "/cadastro/cursos" },
-    // { index: 4, menu: "Logout", route: "/logout" }, refazer depois
+    // { index: 4, menu: "Logout", route: "/logout" }, // refazer depois
   ];
 
   const redesSociais: any = [
@@ -98,11 +98,6 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           {menuItens.map((value: any) => {
-            if (value.route === "/logout") {
-              useEffect(() => {
-                localStorage.removeItem("token");
-              }, []);
-            }
             return (
               <Typography
                 variant="h6"
@@ -121,6 +116,21 @@ export default function Navbar() {
               </Typography>
             );
           })}
+            <Typography
+                variant="h6"
+                color="inherit"
+                component="div"
+                sx={{ mr: 4 }}
+                key={999}
+              >
+                <Link
+                  key={999}
+                  href={"/"}
+                  className={style.navbar_menus}
+                > {}
+                  Logout
+                </Link>
+              </Typography>
           <Typography>{showRedeSocial()}</Typography>
         </Toolbar>
       </AppBar>
