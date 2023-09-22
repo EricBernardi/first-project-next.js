@@ -8,11 +8,6 @@ export default function Curso(){
     return (
         <div>
             <CursosNovos setNomeCurso={SetNomeCurso} />
-            {
-                nomeCurso && nomeCurso.length >= 3 ? (
-                    <div>{nomeCurso}</div>
-                ) : <div>Não há cursos para exibir!</div>
-            }
         </div>
     )
 }
